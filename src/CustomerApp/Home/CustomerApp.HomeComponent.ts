@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ILogger } from '../Utility/CustomerApp.Logger';
 
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './CustomerApp.HomeView.html'
 })
 export class HomeComponent {
+  Logobj : ILogger = null;
+
+  constructor(){
+    this.Logobj.Log();
+  }
   
 }
