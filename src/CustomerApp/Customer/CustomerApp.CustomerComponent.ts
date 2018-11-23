@@ -14,4 +14,8 @@ export class CustomerComponent {
     this.CustomerModels.push(this.CustomerModel);
     this.CustomerModel = new Customer();
   }
+
+  hasError(typeofvalidator:string , controlname:string): boolean{
+    return this.CustomerModel.formCustomerGroup.controls[controlname].hasError(typeofvalidator);
+  }
 }
