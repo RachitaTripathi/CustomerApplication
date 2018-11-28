@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ILogger } from '../Utility/CustomerApp.Logger';
+import { BaseLogger } from '../Utility/CustomerApp.Logger';
 
 
 @Component({
@@ -7,9 +7,10 @@ import { ILogger } from '../Utility/CustomerApp.Logger';
   templateUrl: './CustomerApp.HomeView.html'
 })
 export class HomeComponent {
-  Logobj : ILogger = null;
+  Logobj : BaseLogger = null;
 
-  constructor(){
+  constructor(_logger : BaseLogger){
+    this.Logobj = _logger;
     this.Logobj.Log();
   }
   

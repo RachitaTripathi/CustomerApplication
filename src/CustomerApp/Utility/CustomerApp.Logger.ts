@@ -5,17 +5,22 @@
 export interface ILogger{
     Log();
 }
-export class ConsoleLogger implements ILogger{
+export class BaseLogger implements ILogger{
+    Log(){
+
+    }
+}
+export class ConsoleLogger extends BaseLogger{
     Log(){
         console.log("Using console logger");
     }
 }
-export class DbLogger implements ILogger{
+export class DbLogger extends BaseLogger{
     Log(){
         console.log("Using Db logger");
     }
 }
-export class FileLogger implements ILogger{
+export class FileLogger extends BaseLogger{
     Log(){
         console.log("Using File Logger");
     }
